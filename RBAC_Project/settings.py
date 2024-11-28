@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-0*8udmx&)rsy1jd)$n8%i)x!548j3((9s)r(ozueu^-!!380o#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['rbac-simple-app.vercel.app']
+ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
 
 
 # Application definition
@@ -71,7 +71,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'RBAC_Project.wsgi.application'
+WSGI_APPLICATION = 'RBAC_Project.wsgi.app'
 
 
 # Database
