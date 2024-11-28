@@ -22,10 +22,8 @@ class PostView(APIView):
 
     def post(self, request):
         """
-        Create a new post. Only users with 'creator' or 'admin' role can create posts.
+        Create a new post.
         """
-        if request.user.role not in ['creator', 'admin']:
-            return Response({"message": "Only creators and admins can create posts."}, status=status.HTTP_403_FORBIDDEN)
         try:
             serializer = PostSerializer(data=request.data)
             if serializer.is_valid():
