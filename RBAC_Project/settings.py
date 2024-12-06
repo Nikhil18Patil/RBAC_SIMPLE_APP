@@ -143,7 +143,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Optional: Additional directories for static files
 STATICFILES_DIRS = [
-    BASE_DIR / "static",  # Recommended way to use BASE_DIR
+    # Recommended way to use BASE_DIR
 ]
 
 
