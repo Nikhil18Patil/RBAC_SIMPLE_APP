@@ -3,9 +3,17 @@
     {
       "src": "RBAC_Project/wsgi.py",
       "use": "@vercel/python"
+    },
+    {
+      "src": "staticfiles/**/*",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/staticfiles/$1"
+    },
     {
       "src": "/(.*)",
       "dest": "RBAC_Project/wsgi.py"
