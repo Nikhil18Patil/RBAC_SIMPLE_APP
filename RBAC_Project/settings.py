@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'user_app',
-    'blog_app'
+    'blog_app',
+    'drf_yasg'
 ]
 
 MIDDLEWARE = [
@@ -142,7 +143,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Optional: Additional directories for static files
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    BASE_DIR / "static",  # Recommended way to use BASE_DIR
 ]
 
 

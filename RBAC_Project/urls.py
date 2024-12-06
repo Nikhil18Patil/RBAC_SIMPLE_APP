@@ -17,9 +17,28 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework.permissions import AllowAny
+from drf_yasg.views import get_schema_view
+from drf_yasg import openapi
+
+schema_view=get_schema_view(
+    openapi.Info(
+        title="RBAC_APP SYSTEMS API",
+        description="this is documentation for your rbac app",
+        default_version="v1",
+        contact=openapi.Contact(email="nikhilpatil18012004@gmail.com"),
+        license=openapi.License(name="ALL Right Reserved")
+        
+    ),
+    public=True,
+    permission_classes=(AllowAny,)
+)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('user/', include('user_app.urls')),  # User app URLs
     path('blog/', include('blog_app.urls')),  # Blog app URLs
+    
+    path('', schema_view.with_ui('redoc', cache_timeout=0), name="redoc_documentation"),
+    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='swagger_documentation')
 ]
